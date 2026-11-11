@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aisun Mamedova | AI-Powered Growth Marketing Manager</title>
+<meta name="description" content="Aisun Mamedova, AI-Powered Growth Marketing Manager. Building intelligent marketing systems that scale businesses.">
+<meta name="theme-color" content="#071D49">
+<meta property="og:title" content="Aisun Mamedova | AI-Powered Growth Marketing Manager">
+<meta property="og:description" content="Building Intelligent Marketing Systems That Scale Businesses.">
+<meta property="og:image" content="photo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* Layout concept: one continuous navy "command space". A fixed 3D node field sits behind the whole page
+   and flies forward as you scroll; the hero adds a rotating node globe behind the portrait.
+   Sections are glass panels floating over the field. Single committed dark look. */
+:root{
+  --navy:#071D49;          /* Midnight Navy  - Pantone 2768 */
+  --navy-deep:#040F2B;
+  --navy-2:#0E2B66;
+  --ice:#D9E8F5;           /* Ice Blue       - Pantone P 115-9 */
+  --electric:#1F4FFF;      /* Electric Blue  - Pantone P 104-8 */
+  --electric-hi:#7D9CFF;   /* electric lifted for text on navy */
+  --chartreuse:#D6E24A;    /* Chartreuse     - Pantone P 166-8 */
+  --white:#FFFFFF;
+  --text:#EAF2FB;
+  --muted:#9FB3D6;
+  --line:rgba(217,232,245,.12);
+  --line-2:rgba(125,156,255,.35);
+
+  --display:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;
+  --body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"DM Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+
+  --wrap:1180px;
+  --radius:18px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:84px;background:var(--navy-deep)}
+body{background:radial-gradient(120% 80% at 70% 0%,var(--navy) 0%,var(--navy-deep) 70%) fixed,var(--navy-deep);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--navy-deep)}
+a{color:inherit}
+h1,h2,h3,p,ul,ol,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+:focus-visible{outline:2px solid var(--chartreuse);outline-offset:3px;border-radius:6px}
+
+#field{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.gridfx{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;opacity:.35;-webkit-mask-image:radial-gradient(80% 60% at 50% 40%,#000 0%,transparent 75%);mask-image:radial-gradient(80% 60% at 50% 40%,#000 0%,transparent 75%)}
+.page{position:relative;z-index:1}
+
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.band{padding-block:clamp(64px,9vw,120px);overflow-x:clip}
+
+.label{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500}
+.eyebrow{display:inline-flex;align-items:center;gap:.8em;color:var(--electric-hi)}
+.eyebrow::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--chartreuse);box-shadow:0 0 12px var(--chartreuse)}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.04;letter-spacing:-.025em;text-wrap:balance}
+h2 em,h1 em{font-style:normal;background:linear-gradient(95deg,var(--chartreuse) 0%,#B9E86A 45%,var(--electric-hi) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+h3{font-family:var(--display);font-weight:700;letter-spacing:-.01em;line-height:1.2}
+
+.glass{background:linear-gradient(160deg,rgba(24,60,190,.55),rgba(10,34,86,.82) 40%,rgba(6,22,58,.9));border:1px solid var(--line);border-radius:var(--radius);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+
+/* ---------- buttons ---------- */
+.btn{position:relative;display:inline-flex;align-items:center;gap:.55em;padding:.9em 1.45em;border-radius:999px;font-weight:600;font-size:.98rem;text-decoration:none;border:1px solid transparent;transition:transform .18s ease,background-color .18s ease,color .18s ease,border-color .18s ease,box-shadow .18s ease;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:1.05em;height:1.05em;flex:none}
+.btn-lime{background:var(--chartreuse);color:var(--navy);box-shadow:0 10px 30px rgba(214,226,74,.18)}
+.btn-lime:hover{box-shadow:0 0 0 6px rgba(214,226,74,.16),0 14px 36px rgba(214,226,74,.28)}
+.btn-ghost{border-color:var(--line-2);color:var(--text);background:rgba(31,79,255,.10)}
+.btn-ghost:hover{border-color:var(--electric-hi);background:rgba(31,79,255,.22)}
+
+/* ---------- header ---------- */
+.site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:rgba(4,15,43,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:68px}
+.brand{font-family:var(--display);font-weight:800;font-size:1.06rem;letter-spacing:.06em;text-decoration:none;display:flex;align-items:center;gap:.65em;white-space:nowrap;color:var(--text)}
+.brand i{width:10px;height:10px;border-radius:50%;background:var(--chartreuse);box-shadow:0 0 12px var(--chartreuse);display:block}
+.nav{display:flex;gap:clamp(14px,2.2vw,30px)}
+.nav a{text-decoration:none;font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);transition:color .15s ease}
+.nav a:hover{color:var(--chartreuse)}
+.site-header .btn{padding:.6em 1.1em;font-size:.9rem}
+@media (max-width:960px){.nav{display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow-x:clip}
+.hero-main{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,5vw,72px);align-items:center;padding-block:clamp(48px,6vw,88px) clamp(36px,4vw,56px)}
+.hero-copy{display:flex;flex-direction:column;gap:26px;min-width:0}
+.hero .eyebrow .caret{display:inline-block;width:.55em;height:1.1em;background:var(--chartreuse);margin-left:.2em;vertical-align:-.2em}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,5vw,4.2rem);line-height:1;letter-spacing:-.035em;text-wrap:balance}
+.hero-lede{font-size:clamp(1.02rem,1.3vw,1.14rem);color:var(--muted);max-width:56ch}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 16px}
+
+.visual{position:relative;justify-self:center;width:min(100%,460px);aspect-ratio:1/1.08;display:grid;place-items:center}
+#globe{position:absolute;left:-14%;top:-14%;width:128%;height:128%;pointer-events:none}
+.portrait{position:relative;width:76%;transition:transform .25s ease}
+.portrait img{display:block;width:100%;height:auto;aspect-ratio:10/11.5;object-fit:cover;object-position:50% 0;border-radius:999px 999px 20px 20px;border:1px solid var(--line-2);box-shadow:0 30px 80px rgba(0,0,0,.45),0 0 0 6px rgba(31,79,255,.12),0 0 60px rgba(31,79,255,.35)}
+.hud{position:absolute;inset:-12px;pointer-events:none}
+.hud i{position:absolute;width:22px;height:22px;border-color:var(--chartreuse);border-style:solid}
+.hud i:nth-child(1){left:0;bottom:0;border-width:0 0 2px 2px}
+.hud i:nth-child(2){right:0;bottom:0;border-width:0 2px 2px 0}
+.scan{position:absolute;left:0;right:0;top:0;height:30%;border-radius:999px 999px 0 0;background:linear-gradient(180deg,transparent,rgba(125,156,255,.16) 85%,rgba(214,226,74,.5) 100%);mix-blend-mode:screen;pointer-events:none;opacity:0}
+.chip{position:absolute;z-index:2;left:-6%;bottom:9%;display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:14px;background:rgba(4,15,43,.8);border:1px solid var(--line-2);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 18px 40px rgba(0,0,0,.4)}
+.chip b{font-family:var(--display);font-weight:800;font-size:1.9rem;line-height:1;color:var(--chartreuse)}
+.chip span{font-size:.8rem;line-height:1.25;color:var(--muted)}
+
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));overflow:hidden}
+.stats div{position:relative;padding:24px 22px 26px;display:flex;flex-direction:column;gap:4px}
+.stats div+div{border-left:1px solid var(--line)}
+.stats div::before{content:"";position:absolute;left:22px;top:0;width:28px;height:2px;background:var(--chartreuse)}
+.stats b{font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,2.6vw,2.2rem);line-height:1.05;letter-spacing:-.02em}
+.stats span{font-size:.9rem;color:var(--muted)}
+
+@media (max-width:860px){
+  .hero-main{grid-template-columns:minmax(0,1fr)}
+  .visual{order:-1;width:min(74%,320px)}
+  .chip{padding:8px 12px;left:-10%}
+  .chip b{font-size:1.4rem}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stats div+div{border-left:0}
+  .stats div:nth-child(even){border-left:1px solid var(--line)}
+  .stats div:nth-child(n+3){border-top:1px solid var(--line)}
+}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,6vw,88px);align-items:start}
+.about-grid h2{margin-top:14px}
+.about-body{display:flex;flex-direction:column;gap:20px;max-width:62ch}
+.about-body p:first-child{font-family:var(--display);font-weight:500;font-size:clamp(1.2rem,1.9vw,1.5rem);line-height:1.35;letter-spacing:-.01em;color:var(--text)}
+.about-body p{color:var(--muted)}
+.sectors{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.sectors li{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:.55em .95em;border-radius:6px;border:1px solid var(--line-2);color:var(--ice);background:rgba(31,79,255,.10)}
+@media (max-width:860px){.about-grid{grid-template-columns:minmax(0,1fr)}}
+
+.sec-head{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-bottom:clamp(28px,4vw,52px)}
+
+/* ---------- services (3D tilt cards) ---------- */
+.services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;perspective:1100px}
+.service{position:relative;padding:28px 26px 30px;display:flex;flex-direction:column;gap:14px;min-width:0;overflow:hidden;transform-style:preserve-3d;transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .25s ease}
+.service.in{transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+.service::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(320px circle at var(--mx,50%) var(--my,0%),rgba(125,156,255,.22),transparent 60%);opacity:0;transition:opacity .25s ease;pointer-events:none}
+.service:hover{border-color:var(--line-2)}
+.service:hover::before{opacity:1}
+.service>*{position:relative}
+.service .ico{width:48px;height:48px;border-radius:12px;background:linear-gradient(145deg,var(--electric),#13308F);color:var(--chartreuse);display:grid;place-items:center;margin-bottom:6px;box-shadow:0 8px 24px rgba(31,79,255,.4)}
+.service .ico svg{width:22px;height:22px}
+.service h3{font-size:1.26rem}
+.service p{color:var(--muted);font-size:.98rem}
+@media (max-width:940px){.services{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.services{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- experience ---------- */
+.timeline{position:relative;padding:8px clamp(18px,3vw,36px)}
+.timeline::before{content:"";position:absolute;left:calc(clamp(18px,3vw,36px) + 5px);top:40px;bottom:40px;width:2px;background:linear-gradient(var(--chartreuse),var(--electric) 25%,rgba(31,79,255,.15))}
+.role{position:relative;display:grid;grid-template-columns:190px minmax(0,1fr);gap:8px 32px;padding:26px 0 26px 40px;border-bottom:1px solid var(--line)}
+.role:last-child{border-bottom:0}
+.role::before{content:"";position:absolute;left:0;top:35px;width:12px;height:12px;border-radius:50%;background:var(--navy-deep);border:2px solid var(--electric-hi)}
+.role.current::before{background:var(--chartreuse);border-color:var(--chartreuse);box-shadow:0 0 0 6px rgba(214,226,74,.16),0 0 18px var(--chartreuse)}
+.role-meta{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding-top:5px}
+.badge{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;padding:.42em .8em;border-radius:6px;border:1px solid var(--line);color:var(--muted)}
+.role.current .badge{background:var(--chartreuse);border-color:var(--chartreuse);color:var(--navy)}
+.dur{font-family:var(--mono);font-size:.8rem;color:var(--electric-hi)}
+.role-body{display:flex;flex-direction:column;gap:6px;min-width:0}
+.role h3{font-size:clamp(1.2rem,1.8vw,1.42rem)}
+.role .co{color:var(--ice);font-weight:500;font-size:.98rem}
+.role p.desc{color:var(--muted);max-width:68ch;margin-top:6px;font-size:.98rem}
+.award{margin-top:12px;display:flex;gap:10px;align-items:flex-start;background:rgba(214,226,74,.08);border:1px solid rgba(214,226,74,.3);border-radius:12px;padding:12px 14px;font-size:.92rem;color:var(--ice);max-width:68ch}
+.award svg{width:18px;height:18px;flex:none;color:var(--chartreuse);margin-top:3px}
+@media (max-width:720px){.role{grid-template-columns:minmax(0,1fr);padding-left:32px}.role-meta{flex-direction:row;align-items:center;flex-wrap:wrap}.role::before{top:32px}}
+
+/* ---------- skills ---------- */
+.skills{padding:6px clamp(18px,3vw,32px)}
+.skill-row{display:grid;grid-template-columns:190px minmax(0,1fr);gap:12px 32px;padding:22px 0;border-bottom:1px solid var(--line);align-items:start}
+.skill-row:last-child{border-bottom:0}
+.skill-row h3{font-family:var(--mono);font-weight:500;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--chartreuse);padding-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips li{font-size:.9rem;font-weight:500;padding:.42em .9em;border-radius:8px;background:rgba(217,232,245,.05);border:1px solid var(--line);color:var(--ice);transition:background-color .15s ease,border-color .15s ease,box-shadow .15s ease}
+.chips li:hover{background:rgba(31,79,255,.25);border-color:var(--electric-hi);box-shadow:0 0 18px rgba(31,79,255,.35)}
+@media (max-width:720px){.skill-row{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- education ---------- */
+.edu-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(18px,3vw,28px);align-items:start}
+.edu-col{display:flex;flex-direction:column;gap:18px;min-width:0}
+.degree{border-radius:var(--radius);padding:30px 28px;display:flex;flex-direction:column;gap:10px;background:linear-gradient(150deg,var(--electric) 0%,#1638B8 55%,var(--navy-2) 100%);border:1px solid rgba(255,255,255,.18);box-shadow:0 24px 60px rgba(31,79,255,.3)}
+.degree .label{color:var(--chartreuse)}
+.degree h3{font-size:1.5rem;color:var(--white)}
+.degree .major{color:var(--ice);font-weight:500}
+.degree p.desc{color:#D3DEFF;font-size:.96rem;margin-top:6px}
+.panel{padding:26px 28px}
+.panel>.label{color:var(--electric-hi);display:block;margin-bottom:10px}
+.rows li{display:flex;justify-content:space-between;align-items:baseline;gap:8px 20px;padding:12px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.rows li:last-child{border-bottom:0;padding-bottom:0}
+.rows b{font-weight:600;color:var(--text)}
+.rows span{color:var(--muted);font-size:.92rem}
+.certs li{display:grid;grid-template-columns:minmax(0,1fr) auto 3.4em;gap:6px 18px;align-items:baseline}
+.certs .yr{font-family:var(--mono);font-size:.84rem;text-align:right;color:var(--chartreuse);font-variant-numeric:tabular-nums}
+@media (max-width:860px){.edu-grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:520px){.certs li{grid-template-columns:minmax(0,1fr) auto}.certs li b{grid-column:1/-1}}
+
+/* ---------- contact ---------- */
+.contact-box{position:relative;overflow:hidden;border-radius:28px;background:linear-gradient(135deg,var(--electric) 0%,#1A3FD0 50%,#10287F 100%);border:1px solid rgba(255,255,255,.2);box-shadow:0 40px 120px rgba(31,79,255,.35);padding:clamp(28px,5vw,64px)}
+.contact-box::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);background-size:40px 40px;-webkit-mask-image:linear-gradient(120deg,transparent 20%,#000 90%);mask-image:linear-gradient(120deg,transparent 20%,#000 90%);pointer-events:none}
+.contact-box::after{content:"";position:absolute;right:-80px;top:-80px;width:240px;height:240px;border-radius:50%;background:var(--chartreuse);box-shadow:0 0 120px rgba(214,226,74,.6)}
+.contact-inner{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,64px);align-items:center}
+.contact-copy{display:flex;flex-direction:column;gap:22px;min-width:0}
+.contact-copy h2{font-size:clamp(2rem,4.4vw,3.5rem);color:var(--white)}
+.contact-copy p{color:#E3EAFF;max-width:54ch;font-size:1.06rem}
+.contact-copy .btn-ghost{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.06)}
+.contact-cards{display:flex;flex-direction:column;gap:12px;min-width:0}
+.ccard{background:rgba(4,15,43,.78);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;text-decoration:none;min-width:0}
+a.ccard{transition:transform .18s ease,border-color .18s ease}
+a.ccard:hover{transform:translateX(4px);border-color:var(--chartreuse)}
+.ccard .ico{width:42px;height:42px;border-radius:11px;background:rgba(31,79,255,.35);color:var(--chartreuse);display:grid;place-items:center;flex:none}
+.ccard .ico svg{width:20px;height:20px}
+.ccard .txt{display:flex;flex-direction:column;min-width:0;flex:1}
+.ccard .txt small{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.ccard .txt b{font-weight:600;font-size:1.02rem;overflow-wrap:anywhere;user-select:all;color:var(--text)}
+.copy{font:inherit;font-size:.82rem;font-weight:600;padding:.5em .9em;border-radius:999px;border:1px solid var(--line-2);background:transparent;color:var(--text);cursor:pointer;flex:none}
+.copy:hover{border-color:var(--chartreuse);color:var(--chartreuse)}
+@media (max-width:860px){.contact-inner{grid-template-columns:minmax(0,1fr)}.contact-box::after{width:140px;height:140px;right:-50px;top:-50px}}
+
+/* ---------- footer ---------- */
+.site-footer{border-top:1px solid var(--line);background:rgba(4,15,43,.7);color:var(--muted);padding-block:48px 36px}
+.site-footer .wrap{display:flex;flex-direction:column;gap:28px}
+.foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px 48px;align-items:flex-start}
+.foot-top p{max-width:52ch;font-size:.96rem;margin-top:12px}
+.social{display:flex;gap:10px}
+.social a{display:inline-flex;align-items:center;gap:.5em;padding:.6em 1em;border-radius:999px;border:1px solid var(--line-2);text-decoration:none;font-size:.9rem;font-weight:500;color:var(--text);transition:background-color .15s ease,color .15s ease,border-color .15s ease}
+.social a:hover{background:var(--chartreuse);border-color:var(--chartreuse);color:var(--navy)}
+.social svg{width:16px;height:16px}
+.copyright{border-top:1px solid var(--line);padding-top:22px;font-size:.8rem;font-family:var(--mono);letter-spacing:.06em}
+
+/* ---------- motion ---------- */
+.reveal{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+@media (prefers-reduced-motion:no-preference){
+  .hero-copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) backwards}
+  .hero-copy>*:nth-child(2){animation-delay:.08s}
+  .hero-copy>*:nth-child(3){animation-delay:.16s}
+  .hero-copy>*:nth-child(4){animation-delay:.24s}
+  .visual{animation:rise 1s cubic-bezier(.2,.7,.2,1) .1s backwards}
+  .hero .eyebrow .caret{animation:blink 1.1s steps(1) infinite}
+  .scan{animation:scan 5s ease-in-out 1.2s infinite}
+  .js .reveal:not(.in){transform:perspective(1000px) translateY(40px) rotateX(8deg)}
+  .chip{animation:float 6s ease-in-out infinite}
+}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}}
+@keyframes blink{50%{opacity:0}}
+@keyframes scan{0%{transform:translateY(-10%);opacity:0}15%{opacity:1}60%{transform:translateY(260%);opacity:.8}75%,100%{transform:translateY(260%);opacity:0}}
+@keyframes float{50%{transform:translateY(-8px)}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.service,a.ccard,.portrait,.reveal{transition:none}}
+</style>
+</head>
+<body>
+<canvas id="field" aria-hidden="true"></canvas>
+<div class="gridfx" aria-hidden="true"></div>
+
+<div class="page">
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top"><i></i>AISUN MAMEDOVA</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-lime" href="https://calendly.com/aisunmamedova-info/30min" target="_blank" rel="noopener">Schedule a Call</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-main">
+    <div class="hero-copy">
+      <p class="label eyebrow">AI-Powered Growth Marketing Manager<span class="caret" aria-hidden="true"></span></p>
+      <h1>Building Intelligent Marketing Systems That <em>Scale Businesses.</em></h1>
+      <p class="hero-lede">I help organizations accelerate growth by combining AI, automation, CRM, customer acquisition, and data-driven marketing into scalable systems that increase efficiency, generate qualified demand, and deliver measurable business outcomes.</p>
+      <div class="hero-actions">
+        <a class="btn btn-lime" href="https://wa.me/995593520194" target="_blank" rel="noopener">Let's Connect
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="https://calendly.com/aisunmamedova-info/30min" target="_blank" rel="noopener">Schedule a Call</a>
+      </div>
+    </div>
+    <div class="visual">
+      <canvas id="globe" aria-hidden="true"></canvas>
+      <figure class="portrait" id="portrait">
+        <img src="photo.jpg" alt="Aisun Mamedova at her desk, smiling, in a navy blazer" width="900" height="985">
+        <span class="scan" aria-hidden="true"></span>
+        <span class="hud" aria-hidden="true"><i></i><i></i></span>
+      </figure>
+      <div class="chip"><b>5+</b><span>Years<br>Experience</span></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="stats glass">
+      <div><b>5+</b><span>Years Experience</span></div>
+      <div><b>Global</b><span>Marketing</span></div>
+      <div><b>AI &amp;</b><span>Automation</span></div>
+      <div><b>Growth</b><span>Systems</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="about">
+  <div class="wrap about-grid reveal">
+    <div>
+      <span class="label eyebrow">About</span>
+      <h2>More Than Marketing. I Build <em>Business Growth Systems.</em></h2>
+    </div>
+    <div class="about-body">
+      <p>Modern marketing is no longer about isolated campaigns. Sustainable growth comes from connected systems where AI, automation, customer acquisition, CRM, analytics, and business strategy work together.</p>
+      <p>Over the past more than 5 years, I've partnered with international organizations across education, technology, SaaS, AI, real estate, fintech, and digital businesses to build scalable marketing ecosystems that improve customer acquisition, streamline operations, and increase revenue.</p>
+      <p>My work combines strategic thinking with hands-on execution, helping organizations transform marketing into a predictable growth engine.</p>
+      <p>I enjoy solving complex business challenges, simplifying workflows, and creating systems that continue generating value long after implementation.</p>
+      <ul class="sectors" aria-label="Sectors">
+        <li>Education</li><li>Technology</li><li>SaaS</li><li>AI</li><li>Real Estate</li><li>Fintech</li><li>Digital Businesses</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="label eyebrow">Services</span><h2>How I Can Help</h2></div>
+    <div class="services">
+      <article class="service glass tilt reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
+        <h3>AI Growth Strategy</h3>
+        <p>Designing scalable AI-powered marketing strategies aligned with business objectives, customer acquisition, and sustainable growth.</p>
+      </article>
+      <article class="service glass tilt reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M7 6h10M6 8l5 8M18 8l-5 8"/></svg></div>
+        <h3>Marketing Automation</h3>
+        <p>Building intelligent automation systems using AI, CRM, workflows, and customer journeys that improve operational efficiency.</p>
+      </article>
+      <article class="service glass tilt reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v4h-4"/><circle cx="12" cy="12" r="2.5"/></svg></div>
+        <h3>CRM &amp; Customer Lifecycle</h3>
+        <p>Creating end-to-end customer acquisition, nurturing, retention, segmentation, and lifecycle marketing systems.</p>
+      </article>
+      <article class="service glass tilt reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
+        <h3>Paid Media &amp; Performance</h3>
+        <p>Managing Google Ads, Meta Ads, LinkedIn Ads, and multi-channel campaigns focused on measurable ROI and qualified lead generation.</p>
+      </article>
+      <article class="service glass tilt reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/></svg></div>
+        <h3>AI Consulting &amp; Workflow Design</h3>
+        <p>Helping businesses implement AI tools, automation frameworks, AI agents, prompt systems, and operational workflows into everyday marketing.</p>
+      </article>
+      <article class="service glass tilt reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+        <h3>Analytics &amp; Growth Intelligence</h3>
+        <p>Transforming business and marketing data into actionable insights using dashboards, attribution models, conversion tracking, and performance reporting.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="label eyebrow">Career</span><h2>Professional Experience</h2></div>
+    <ol class="timeline glass reveal">
+      <li class="role current">
+        <div class="role-meta"><span class="badge">Current Position</span></div>
+        <div class="role-body">
+          <h3>Marketing Manager</h3>
+          <span class="co">Global eCampus Solutions Company (for details request my CV)</span>
+          <p class="desc">Leading international marketing initiatives focused on customer acquisition, AI-powered marketing, CRM optimization, lifecycle marketing, automation, paid advertising, analytics, and digital growth strategies across multiple international university brands.</p>
+        </div>
+      </li>
+      <li class="role">
+        <div class="role-meta"><span class="badge">Previous</span></div>
+        <div class="role-body">
+          <h3>Marketing Specialist</h3>
+          <span class="co">International Real Estate &amp; Investment Projects (United States)</span>
+          <p class="desc">Led international marketing initiatives including paid advertising, website strategy, CRM implementation, lead generation, email marketing, brand positioning, and digital campaign management, for global real estate investment projects.</p>
+        </div>
+      </li>
+      <li class="role">
+        <div class="role-meta"><span class="badge">Previous</span><span class="dur">2 years</span></div>
+        <div class="role-body">
+          <h3>PR &amp; Digital Content Manager</h3>
+          <span class="co">Zawaya Real Estate Holding</span>
+          <p class="desc">Managed corporate communications, media relations, public relations, executive communications, digital publishing, content strategy, event promotion, and brand storytelling across multiple real estate developments.</p>
+          <div class="award"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><span>Recipient of the Certificate of Appreciation for outstanding contribution to brand communications and corporate visibility.</span></div>
+        </div>
+      </li>
+      <li class="role">
+        <div class="role-meta"><span class="badge">Previous</span><span class="dur">1 year</span></div>
+        <div class="role-body">
+          <h3>Operations Marketing Specialist</h3>
+          <span class="co">Mavrik White Label Software Company (Start-up)</span>
+          <p class="desc">Supported marketing operations for international white-label software solutions, coordinating product marketing, campaign execution, CRM operations, customer lifecycle initiatives, reporting, internal processes, and cross-functional marketing activities.</p>
+        </div>
+      </li>
+      <li class="role">
+        <div class="role-meta"><span class="badge">Previous</span></div>
+        <div class="role-body">
+          <h3>Social Media Growth Manager</h3>
+          <span class="co">International Talent &amp; Creator Management Agency</span>
+          <p class="desc">Managed TikTok and Instagram growth for international creators and digital talent by developing platform-specific content strategies, optimizing algorithm performance, increasing organic reach, audience engagement, and short-form content performance across multiple accounts.</p>
+        </div>
+      </li>
+      <li class="role">
+        <div class="role-meta"><span class="badge">Previous</span><span class="dur">8 months</span></div>
+        <div class="role-body">
+          <h3>Marketing Specialist</h3>
+          <span class="co">Multinational White Label Software Company (Start-up, Tbilisi, Georgia)</span>
+          <p class="desc">Supported marketing activities for a multinational white-label software start-up based in Tbilisi, contributing to campaign execution, product marketing, and day-to-day marketing operations.</p>
+        </div>
+      </li>
+      <li class="role">
+        <div class="role-meta"><span class="badge">Previous</span></div>
+        <div class="role-body">
+          <h3>Product Copywriting Manager</h3>
+          <span class="co">French Vintage Online Shop</span>
+          <p class="desc">Managed product copywriting for a French vintage online store, creating and overseeing product descriptions and e-commerce content that supported the brand's voice and online sales.</p>
+        </div>
+      </li>
+      <li class="role">
+        <div class="role-meta"><span class="badge">Previous</span><span class="dur">6 months</span></div>
+        <div class="role-body">
+          <h3>Content Copywriter</h3>
+          <span class="co">Start-up Project</span>
+          <p class="desc">Wrote content and marketing copy for an early-stage start-up project, supporting brand messaging and digital content needs.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="band" id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="label eyebrow">Stack</span><h2>Technologies &amp; Skills</h2></div>
+    <div class="skills glass reveal">
+      <div class="skill-row"><h3>AI</h3><ul class="chips"><li>ChatGPT</li><li>Claude</li><li>Gemini</li><li>Perplexity</li><li>NotebookLM</li><li>Google AI Studio</li><li>OpenAI API</li><li>Anthropic</li><li>Cursor AI</li><li>GitHub Copilot</li><li>V0</li><li>Lovable</li><li>Bolt.new</li></ul></div>
+      <div class="skill-row"><h3>AI Automation</h3><ul class="chips"><li>n8n</li><li>Make.com</li><li>Zapier</li><li>GoHighLevel</li><li>ManyChat</li><li>Vapi AI</li><li>Webhook Automation</li><li>AI Agents</li><li>Prompt Engineering</li><li>Workflow Automation</li></ul></div>
+      <div class="skill-row"><h3>CRM</h3><ul class="chips"><li>GoHighLevel</li><li>HubSpot</li><li>Zoho CRM</li><li>ActiveCampaign</li><li>Mailchimp</li><li>Brevo</li></ul></div>
+      <div class="skill-row"><h3>Digital Marketing</h3><ul class="chips"><li>Google Ads</li><li>Meta Ads</li><li>LinkedIn Ads</li><li>TikTok Ads</li><li>YouTube Ads</li><li>Pinterest Ads</li><li>Demand Gen Campaigns</li><li>Performance Max</li><li>Remarketing</li><li>Lead Generation</li></ul></div>
+      <div class="skill-row"><h3>Analytics</h3><ul class="chips"><li>GA4</li><li>Google Tag Manager</li><li>Looker Studio</li><li>Hotjar</li><li>Google Search Console</li><li>Google Trends</li><li>Microsoft Clarity</li><li>Conversion Tracking</li><li>UTM Tracking</li><li>Dashboard Reporting</li></ul></div>
+      <div class="skill-row"><h3>SEO</h3><ul class="chips"><li>Technical SEO</li><li>On-Page SEO</li><li>Off-Page SEO</li><li>Local SEO</li><li>SEO Strategy</li><li>AEO</li><li>AI Search Optimization</li><li>Schema Markup</li><li>Keyword Research</li></ul></div>
+      <div class="skill-row"><h3>Development</h3><ul class="chips"><li>GitHub</li></ul></div>
+      <div class="skill-row"><h3>Design</h3><ul class="chips"><li>Figma</li><li>Canva</li><li>Adobe</li><li>Framer</li><li>Design Systems</li><li>Motion Design</li></ul></div>
+      <div class="skill-row"><h3>Marketing</h3><ul class="chips"><li>Brand Strategy</li><li>Growth Marketing</li><li>Growth Hacking</li><li>Marketing Funnels</li><li>Customer Acquisition</li><li>Lifecycle Marketing</li><li>Content Strategy</li><li>Email Marketing</li><li>Community Management</li><li>Copywriting</li><li>A/B Testing</li><li>Market Research</li><li>Competitive Analysis</li><li>Project Management</li><li>Team Leadership</li><li>Cross-functional Collaboration</li><li>Strategic Planning</li><li>Business Development</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="education">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="label eyebrow">Credentials</span><h2>Education &amp; Certifications</h2></div>
+    <div class="edu-grid">
+      <div class="edu-col">
+        <div class="degree reveal">
+          <span class="label">Education</span>
+          <h3>Bachelor of Business &amp; Technology</h3>
+          <span class="major">Major: Business Administration &amp; Marketing</span>
+          <span class="major">Georgian Technical University</span>
+          <p class="desc">Studied business management, marketing strategy, digital transformation, entrepreneurship, business analytics, finance, international business, organizational management, and technology-driven business innovation.</p>
+        </div>
+        <div class="panel glass reveal">
+          <span class="label">Languages</span>
+          <ul class="rows">
+            <li><b>Azerbaijani</b><span>Native / Bilingual Proficiency</span></li>
+            <li><b>Turkish</b><span>Native / Bilingual Proficiency</span></li>
+            <li><b>Georgian</b><span>Full Professional Proficiency</span></li>
+            <li><b>English</b><span>Full Professional Proficiency (C1)</span></li>
+            <li><b>Russian</b><span>Limited Working Proficiency</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel glass reveal">
+        <span class="label">Certifications</span>
+        <ul class="rows certs">
+          <li><b>Oracle Cloud Infrastructure AI Foundations Associate</b><span>Oracle</span><span class="yr">2025</span></li>
+          <li><b>Anthropic AI Fluency Framework &amp; Foundations</b><span>Anthropic</span><span class="yr">2025</span></li>
+          <li><b>Anthropic Claude 101</b><span>Anthropic</span><span class="yr">2025</span></li>
+          <li><b>Advanced Marketing</b><span>MindLuster</span><span class="yr">2023</span></li>
+          <li><b>Content Marketing</b><span>MindLuster</span><span class="yr">2023</span></li>
+          <li><b>Digital Marketing Professional Certification</b><span>Alison</span><span class="yr">2022</span></li>
+          <li><b>Essential Management Skills</b><span>IBMI</span><span class="yr">2022</span></li>
+          <li><b>Shopify Expert</b><span>Udemy</span><span class="yr">2021</span></li>
+          <li><b>Professional Copywriting</b><span>Udemy</span><span class="yr">2021</span></li>
+          <li><b>Certificate of Appreciation: Corporate Communications &amp; Brand Excellence</b><span>Zawaya Real Estate Holding</span><span class="yr">Award</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="contact">
+  <div class="wrap">
+    <div class="contact-box reveal">
+      <div class="contact-inner">
+        <div class="contact-copy">
+          <h2>Let's Build Intelligent Growth Systems Together.</h2>
+          <p>Whether you're scaling a startup, optimizing enterprise marketing operations, implementing AI, or building intelligent customer acquisition systems, I'd be happy to explore how I can help your business grow.</p>
+          <div class="hero-actions">
+            <a class="btn btn-lime" href="https://calendly.com/aisunmamedova-info/30min" target="_blank" rel="noopener">Schedule a Conversation
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn-ghost" href="https://calendly.com/aisunmamedova-info/30min" target="_blank" rel="noopener">Schedule a Call</a>
+          </div>
+        </div>
+        <div class="contact-cards">
+          <div class="ccard">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+            <span class="txt"><small>Email me</small><b id="email">info@aisunmamedova.com</b></span>
+            <button class="copy" id="copy-email" type="button">Copy</button>
+          </div>
+          <a class="ccard" href="https://wa.me/995593520194" target="_blank" rel="noopener">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.7-5.2A8.5 8.5 0 1 1 21 12z"/></svg></span>
+            <span class="txt"><small>WhatsApp</small><b>Message on WhatsApp</b></span>
+          </a>
+          <div class="ccard">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></svg></span>
+            <span class="txt"><small>Location</small><b>Global</b></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a class="brand" href="#top"><i></i>AISUN MAMEDOVA</a>
+        <p>AI Powered Growth Marketing Manager specializing in marketing systems, automation, CRM, customer acquisition, and digital transformation for ambitious organizations.</p>
+      </div>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/aysun-mamedova-162a51208" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.05c.53-1 1.83-1.9 3.75-1.9 4 0 4.4 2.5 4.4 5.7V21h-4v-5.2c0-1.3-.02-2.9-1.8-2.9s-2.1 1.4-2.1 2.8V21h-4z"/></svg>LinkedIn</a>
+        <a href="https://www.instagram.com/aisunmamedovaa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>Instagram</a>
+      </div>
+    </div>
+    <div class="copyright">© 2026 AISUN MAMEDOVA. All rights reserved.</div>
+  </div>
+</footer>
+</div>
+
+<script>
+(function(){
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine=window.matchMedia&&matchMedia('(pointer: fine)').matches;
+  document.documentElement.classList.add('js');
+  var mouse={x:0,y:0,tx:0,ty:0};
+  addEventListener('pointermove',function(e){mouse.tx=e.clientX/innerWidth*2-1;mouse.ty=e.clientY/innerHeight*2-1;},{passive:true});
+
+  /* 3D node field: fixed behind every section, flies forward as the page scrolls */
+  var cv=document.getElementById('field'),ctx=cv.getContext('2d'),W=0,H=0,DPR=1,DEPTH=1800,pts=[],proj=[];
+  function sizeField(){DPR=Math.min(window.devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cv.width=W*DPR;cv.height=H*DPR;ctx.setTransform(DPR,0,0,DPR,0,0);}
+  function seed(){var n=W<700?80:150;pts=[];for(var i=0;i<n;i++){pts.push({x:(Math.random()*2-1)*1100,y:(Math.random()*2-1)*700,z:Math.random()*DEPTH,lime:Math.random()<.08});}}
+  sizeField();seed();
+  function drawField(t){
+    mouse.x+=(mouse.tx-mouse.x)*.05;mouse.y+=(mouse.ty-mouse.y)*.05;
+    ctx.clearRect(0,0,W,H);
+    var cam=(t*0.045+(window.scrollY||0)*0.9)%DEPTH,f=Math.max(W,H)*0.55,cx=W/2,cy=H*0.45,i,j;
+    for(i=0;i<pts.length;i++){
+      var p=pts[i],dz=((p.z-cam)%DEPTH+DEPTH)%DEPTH+40,s=f/dz;
+      proj[i]={x:cx+(p.x-mouse.x*120)*s,y:cy+(p.y-mouse.y*80)*s,dz:dz,s:s,a:Math.min(1,(DEPTH-dz)/500)*Math.min(1,dz/160),wx:p.x,wy:p.y,lime:p.lime};
+    }
+    ctx.lineWidth=1;
+    for(i=0;i<pts.length;i++){var A=proj[i];if(A.a<=0.02)continue;
+      for(j=i+1;j<pts.length;j++){var B=proj[j],ddz=A.dz-B.dz;if(ddz>260||ddz<-260)continue;
+        var dx=A.wx-B.wx,dy=A.wy-B.wy,d2=dx*dx+dy*dy+ddz*ddz;
+        if(d2<62000){var k=(1-d2/62000)*Math.min(A.a,B.a)*.5;ctx.strokeStyle='rgba(125,156,255,'+k.toFixed(3)+')';ctx.beginPath();ctx.moveTo(A.x,A.y);ctx.lineTo(B.x,B.y);ctx.stroke();}}}
+    for(i=0;i<pts.length;i++){var P=proj[i];if(P.a<=0.02)continue;var r=Math.max(.6,Math.min(3.2,P.s*2.4));
+      ctx.fillStyle=P.lime?'rgba(214,226,74,'+(P.a*.95).toFixed(3)+')':'rgba(217,232,245,'+(P.a*.7).toFixed(3)+')';
+      ctx.beginPath();ctx.arc(P.x,P.y,r,0,6.2832);ctx.fill();}
+  }
+
+  /* Hero globe: rotating sphere of nodes with two orbit rings */
+  var gc=document.getElementById('globe'),g=gc.getContext('2d'),GW=0,GH=0,sph=[];
+  (function(){var n=320,ga=Math.PI*(3-Math.sqrt(5));for(var i=0;i<n;i++){var y=1-(i/(n-1))*2,r=Math.sqrt(1-y*y),th=ga*i;sph.push([Math.cos(th)*r,y,Math.sin(th)*r]);}})();
+  function sizeGlobe(){var b=gc.getBoundingClientRect();GW=b.width;GH=b.height;gc.width=GW*DPR;gc.height=GH*DPR;g.setTransform(DPR,0,0,DPR,0,0);}
+  sizeGlobe();
+  function rot(v,ay,ax){var c=Math.cos(ay),s=Math.sin(ay),x=v[0]*c+v[2]*s,z=-v[0]*s+v[2]*c,y=v[1],c2=Math.cos(ax),s2=Math.sin(ax);return [x,y*c2-z*s2,y*s2+z*c2];}
+  var rings=[[1.18,0.35,0.0004,'214,226,74'],[1.32,-0.9,-0.00028,'31,79,255']];
+  function drawGlobe(t){
+    g.clearRect(0,0,GW,GH);
+    var R=Math.min(GW,GH)*0.42,cx=GW/2,cy=GH/2,ay=t*0.00018+mouse.x*.4,ax=-0.35+mouse.y*.2,i;
+    for(i=0;i<sph.length;i++){var q=rot(sph[i],ay,ax),depth=(q[2]+1)/2;
+      g.fillStyle='rgba(125,156,255,'+(.12+depth*.6).toFixed(3)+')';g.beginPath();g.arc(cx+q[0]*R,cy+q[1]*R,.8+depth*1.6,0,6.2832);g.fill();}
+    for(var k=0;k<rings.length;k++){var rr=rings[k],steps=120;g.lineWidth=1.2;
+      for(var s=0;s<steps;s++){var a1=s/steps*6.2832,a2=(s+1)/steps*6.2832;
+        var p1=rot(rot([Math.cos(a1)*rr[0],0,Math.sin(a1)*rr[0]],0,rr[1]),ay*.3,ax),p2=rot(rot([Math.cos(a2)*rr[0],0,Math.sin(a2)*rr[0]],0,rr[1]),ay*.3,ax);
+        g.strokeStyle='rgba('+rr[3]+','+(.08+((p1[2]+rr[0])/(2*rr[0]))*.5).toFixed(3)+')';
+        g.beginPath();g.moveTo(cx+p1[0]*R,cy+p1[1]*R);g.lineTo(cx+p2[0]*R,cy+p2[1]*R);g.stroke();}
+      var ang=t*rr[2]+k*2,sat=rot(rot([Math.cos(ang)*rr[0],0,Math.sin(ang)*rr[0]],0,rr[1]),ay*.3,ax);
+      g.fillStyle='rgb('+rr[3]+')';g.shadowColor='rgb('+rr[3]+')';g.shadowBlur=14;g.beginPath();g.arc(cx+sat[0]*R,cy+sat[1]*R,3.6,0,6.2832);g.fill();g.shadowBlur=0;}
+  }
+
+  addEventListener('resize',function(){var small=W<700;sizeField();sizeGlobe();if(small!==(W<700))seed();if(reduce){drawField(0);drawGlobe(0);}});
+  var heroVisible=true;
+  if('IntersectionObserver' in window){new IntersectionObserver(function(e){heroVisible=e[0].isIntersecting;}).observe(gc);}
+  function loop(t){if(!document.hidden){drawField(t);if(heroVisible)drawGlobe(t);}requestAnimationFrame(loop);}
+  if(reduce){drawField(0);drawGlobe(0);}else{requestAnimationFrame(loop);}
+
+  /* Portrait and card 3D tilt (mouse devices only) */
+  if(fine&&!reduce){
+    var por=document.getElementById('portrait');
+    addEventListener('pointermove',function(e){if(!heroVisible)return;var b=por.getBoundingClientRect();
+      var dx=(e.clientX-(b.left+b.width/2))/innerWidth,dy=(e.clientY-(b.top+b.height/2))/innerHeight;
+      por.style.transform='perspective(900px) rotateY('+(dx*10).toFixed(2)+'deg) rotateX('+(-dy*10).toFixed(2)+'deg)';},{passive:true});
+    document.querySelectorAll('.tilt').forEach(function(el){
+      el.addEventListener('pointermove',function(e){var b=el.getBoundingClientRect(),px=(e.clientX-b.left)/b.width,py=(e.clientY-b.top)/b.height;
+        el.style.setProperty('--ry',((px-.5)*10).toFixed(2)+'deg');el.style.setProperty('--rx',((.5-py)*10).toFixed(2)+'deg');
+        el.style.setProperty('--mx',(px*100).toFixed(1)+'%');el.style.setProperty('--my',(py*100).toFixed(1)+'%');});
+      el.addEventListener('pointerleave',function(){el.style.setProperty('--rx','0deg');el.style.setProperty('--ry','0deg');});
+    });
+  }
+
+  /* Scroll reveal: content is always visible; only depth and position ease in */
+  if('IntersectionObserver' in window&&!reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  }else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});}
+
+  /* Copy email */
+  var btn=document.getElementById('copy-email'),em=document.getElementById('email');
+  function selectIt(){var r=document.createRange();r.selectNodeContents(em);var s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Selected';}
+  btn.addEventListener('click',function(){
+    try{navigator.clipboard.writeText(em.textContent).then(function(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy';},1800);},selectIt);}catch(e){selectIt();}
+  });
+})();
+</script>
+</body>
+</html>
