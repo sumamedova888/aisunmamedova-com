@@ -33,9 +33,9 @@
     {"@type":"ProfessionalService","@id":"https://www.aisunmamedova.com/#service","name":"Aisun Mamedova: AI-Powered Growth Marketing",
      "url":"https://www.aisunmamedova.com/","founder":{"@id":"https://www.aisunmamedova.com/#person"},"areaServed":"Worldwide",
      "hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[
-       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Social Media Management (monthly)"}},
-       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Growth Marketing (monthly)"}},
-       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Full Marketing Partner (monthly)"}}]}},
+       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Social Media & Content"}},
+       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Growth & Performance Marketing"}},
+       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Marketing Systems & AI"}}]}},
     {"@type":"WebSite","@id":"https://www.aisunmamedova.com/#website","url":"https://www.aisunmamedova.com/","name":"Aisun Mamedova","publisher":{"@id":"https://www.aisunmamedova.com/#person"}}
   ]
 }
@@ -152,21 +152,9 @@ h3{font-family:var(--serif);font-weight:600;font-size:1.3rem;line-height:1.25;le
 .offer .tag{position:absolute;top:-13px;left:24px;background:var(--lime);color:var(--navy);font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.35em .8em;border-radius:999px}
 .offer .num{font-size:.78rem;font-weight:600;letter-spacing:.12em;color:var(--electric)}
 .offer .who{color:var(--ink-2);font-size:.96rem}
-.offer dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:.9rem;padding-block:12px;border-block:1px solid var(--line)}
-.offer dt{color:var(--muted)}
-.offer dd{margin:0;font-weight:600}
 .offer .ticks li{font-size:.94rem;margin-top:8px}
-.offer .btn{margin-top:auto;align-self:flex-start}
-.addons{margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
-.addons span{font-weight:600;margin-right:6px}
-.addons li{font-size:.88rem;padding:.42em .9em;border-radius:999px;border:1px dashed #9FB3D6;color:var(--ink-2)}
 @media (max-width:940px){.offers{grid-template-columns:minmax(0,1fr);max-width:620px}}
 
-/* onboarding strip + projects */
-.onboard{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;background:var(--ice);border-radius:14px;padding:16px 20px;margin-bottom:34px}
-.onboard .pill{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--navy);color:#fff;padding:.4em .85em;border-radius:999px}
-.onboard p{flex:1 1 380px;color:var(--ink-2);font-size:.97rem}
-.onboard b{color:var(--ink)}
 .projects{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 .projects li{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:flex;flex-direction:column;gap:4px}
 .projects span{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--electric)}
@@ -296,7 +284,7 @@ textarea{min-height:96px;resize:vertical}
   <div class="wrap">
     <a class="brand" href="#top"><i></i>Aisun Mamedova</a>
     <nav class="nav" id="nav" aria-label="Main">
-      <a href="#services">Plans</a>
+      <a href="#services">What I do</a>
       <a href="#projects">Projects</a>
       <a href="#process">How it works</a>
       <a href="#about">About</a>
@@ -368,68 +356,50 @@ textarea{min-height:96px;resize:vertical}
   </div>
 </section>
 
-<!-- ============ SERVICES: MONTHLY PLANS ============ -->
+<!-- ============ WHAT I DO ============ -->
 <section class="band" id="services">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="kicker">Monthly marketing plans</span>
-      <h2>Your marketing, planned and run every month</h2>
-      <p>I plan the strategy, my design team creates the content, and I run the channels, generate leads and report the results. One monthly plan, one accountable partner, no agency handoffs.</p>
-    </div>
-
-    <div class="onboard reveal">
-      <span class="pill">Every plan starts here</span>
-      <p><b>Month 1 onboarding:</b> audit of your accounts, brand and competitors, a brand voice guide and a 90-day marketing plan. After that, it's the same steady monthly rhythm.</p>
+      <span class="kicker">What I do</span>
+      <h2>Marketing that works as one system</h2>
+      <p>Strategy, content, paid media, lead generation and analytics, connected so every channel works toward the same goals.</p>
     </div>
 
     <div class="offers">
       <article class="offer reveal">
-        <span class="num">PLAN 01</span>
-        <h3>Social Media Management</h3>
-        <p class="who">For businesses that need a consistent, professional social presence.</p>
-        <dl><dt>Channels</dt><dd>Up to 2 platforms</dd><dt>Commitment</dt><dd>3-month minimum</dd><dt>Pricing</dt><dd>On request</dd></dl>
+        <span class="num">01</span>
+        <h3>Social Media &amp; Content</h3>
+        <p class="who">A consistent, on-brand presence across LinkedIn, Instagram and TikTok.</p>
         <ul class="ticks">
-          <li>Monthly strategy and content calendar</li>
-          <li>Posts, carousels and Stories designed by my team</li>
-          <li>Captions, scheduling and publishing</li>
-          <li>Monthly performance report</li>
+          <li>Content strategy and monthly calendars</li>
+          <li>Posts, carousels, Stories and short-form video</li>
+          <li>Captions, scheduling and community</li>
+          <li>Performance tracking and insights</li>
         </ul>
-        <a class="btn btn-ghost" href="https://wa.me/995593520194" target="_blank" rel="noopener" data-cta="plan_social">Ask about this plan</a>
-      </article>
-      <article class="offer featured reveal">
-        <span class="tag">Most requested</span>
-        <span class="num">PLAN 02</span>
-        <h3>Growth Marketing</h3>
-        <p class="who">For businesses ready to turn attention into leads and sales.</p>
-        <dl><dt>Channels</dt><dd>Social + paid + email</dd><dt>Commitment</dt><dd>3-month minimum</dd><dt>Pricing</dt><dd>On request</dd></dl>
-        <ul class="ticks">
-          <li>Everything in Social Media Management</li>
-          <li>Short-form video (Reels and TikToks)</li>
-          <li>Meta and Google Ads: setup, creatives, optimization</li>
-          <li>Email campaigns and lead nurturing</li>
-          <li>Bi-weekly check-in and monthly strategy call</li>
-        </ul>
-        <a class="btn btn-primary" href="https://wa.me/995593520194" target="_blank" rel="noopener" data-cta="plan_growth">Check availability</a>
       </article>
       <article class="offer reveal">
-        <span class="num">PLAN 03</span>
-        <h3>Full Marketing Partner</h3>
-        <p class="who">For businesses that want their whole marketing handled, without hiring a team.</p>
-        <dl><dt>Channels</dt><dd>All channels</dd><dt>Commitment</dt><dd>6-month minimum</dd><dt>Pricing</dt><dd>On request</dd></dl>
+        <span class="num">02</span>
+        <h3>Growth &amp; Performance Marketing</h3>
+        <p class="who">Turning attention into qualified leads and sales.</p>
         <ul class="ticks">
-          <li>Everything in Growth Marketing</li>
-          <li>Brand and campaign strategy, quarterly planning</li>
-          <li>Website content, SEO and AI search visibility</li>
-          <li>CRM, automation and lead tracking</li>
-          <li>Weekly call and live reporting dashboard</li>
+          <li>Meta, Google and LinkedIn Ads</li>
+          <li>Funnels and landing pages</li>
+          <li>Email campaigns and lead nurturing</li>
+          <li>A/B testing and conversion optimization</li>
         </ul>
-        <a class="btn btn-ghost" href="https://wa.me/995593520194" target="_blank" rel="noopener" data-cta="plan_partner">Check availability</a>
+      </article>
+      <article class="offer reveal">
+        <span class="num">03</span>
+        <h3>Marketing Systems &amp; AI</h3>
+        <p class="who">The strategy and systems that hold everything together.</p>
+        <ul class="ticks">
+          <li>Brand, campaign and quarterly planning</li>
+          <li>CRM, automation and lead tracking</li>
+          <li>SEO and AI search visibility</li>
+          <li>AI workflows, analytics and reporting</li>
+        </ul>
       </article>
     </div>
-    <ul class="addons reveal" aria-label="Add-ons and one-off projects">
-      <span>Add-ons &amp; one-off projects:</span>
-      <li>Marketing audit</li><li>Brand identity &amp; design</li><li>Campaign or product launch</li><li>Website landing pages</li><li>Team AI workshop</li>
-    </ul>
   </div>
 </section>
 
@@ -557,10 +527,10 @@ textarea{min-height:96px;resize:vertical}
           <label>I'm interested in
             <select name="interest" id="interest" required>
               <option value="">Choose one</option>
-              <option>Social Media Management</option>
-              <option>Growth Marketing</option>
-              <option>Full Marketing Partner</option>
-              <option>One-off project</option>
+              <option>Social Media &amp; Content</option>
+              <option>Growth &amp; Performance Marketing</option>
+              <option>Marketing Systems &amp; AI</option>
+              <option>A specific project</option>
               <option>Not sure yet</option>
             </select></label>
           <label>Monthly marketing budget
@@ -657,7 +627,7 @@ textarea{min-height:96px;resize:vertical}
         <p>AI-powered growth marketing manager: strategy, ads, leads, automation and analytics. Based in Tbilisi, Georgia, working with clients worldwide.</p>
       </div>
       <nav aria-label="Footer">
-        <a href="#services">Plans</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#checklist">Free checklist</a><a href="#book">Book a call</a>
+        <a href="#services">What I do</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#checklist">Free checklist</a><a href="#book">Book a call</a>
         <a href="https://www.linkedin.com/in/aysun-mamedova-162a51208" target="_blank" rel="noopener me">LinkedIn</a>
         <a href="https://www.instagram.com/aisunmamedovaa" target="_blank" rel="noopener me">Instagram</a>
         <a href="" id="tiktok-link" target="_blank" rel="noopener me" hidden>TikTok</a>
